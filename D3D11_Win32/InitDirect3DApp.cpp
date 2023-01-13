@@ -46,6 +46,7 @@ bool InitDirect3DApp::Init()
 	if (!D3DApp::Init())
 		return false;
 
+
 	return true;
 }
 

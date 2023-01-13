@@ -14,7 +14,8 @@
 
 #include <d3dx11.h>
 #include "d3dx11Effect.h"
-#include <DirectXMath.h> //#include <xnamath.h>
+#include <xnamath.h>
+//#include <DirectXMath.h>
 #include <dxerr.h>
 #include <cassert>
 #include <ctime>
