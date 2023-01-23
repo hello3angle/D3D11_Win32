@@ -12,6 +12,9 @@
     <Filter Include="Common">
       <UniqueIdentifier>{66b671a2-82f1-4699-ad03-bdd28bebe2c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FX">
+      <UniqueIdentifier>{90b2f67a-c895-4f30-b95f-961f84b2d6e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Camera.h">
@@ -47,9 +50,6 @@
     <ClInclude Include="Common\d3dApp.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="InitDirect3DApp.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -57,6 +57,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxApp.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -107,8 +110,13 @@
     <ClCompile Include="GraphicsEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InitDirect3DApp.cpp">
+    <ClCompile Include="BoxApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="FX\color.fx">
+      <Filter>FX</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>
