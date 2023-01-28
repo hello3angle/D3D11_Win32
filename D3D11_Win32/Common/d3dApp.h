@@ -73,8 +73,6 @@ protected:
 	int mClientWidth;
 	int mClientHeight;
 	bool mEnable4xMsaa;
-
-	LPCWSTR tmpChar;
 };
 
 #endif // D3DAPP_H

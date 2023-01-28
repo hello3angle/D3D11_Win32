@@ -148,14 +148,14 @@ void BoxApp::BuildGeometryBuffers()
 {
 	Vertex vertices[] =
 	{
-		{ XMFLOAT3(-1.0f, -1.0f, -1.0f), (const float*)&Colors::White },
-		{ XMFLOAT3(-1.0f, +1.0f, -1.0f), (const float*)&Colors::Black },
-		{ XMFLOAT3(+1.0f, +1.0f, -1.0f), (const float*)&Colors::Red },
-		{ XMFLOAT3(+1.0f, -1.0f, -1.0f), (const float*)&Colors::Green },
-		{ XMFLOAT3(-1.0f, -1.0f, +1.0f), (const float*)&Colors::Blue },
-		{ XMFLOAT3(-1.0f, +1.0f, +1.0f), (const float*)&Colors::Yellow },
-		{ XMFLOAT3(+1.0f, +1.0f, +1.0f), (const float*)&Colors::Cyan },
-		{ XMFLOAT3(+1.0f, -1.0f, +1.0f), (const float*)&Colors::Magenta }
+		{ XMFLOAT3(-1.0f, -1.0f, -1.0f), XMFLOAT4((const float*)&Colors::White) },
+		{ XMFLOAT3(-1.0f, +1.0f, -1.0f), XMFLOAT4((const float*)&Colors::Black) },
+		{ XMFLOAT3(+1.0f, +1.0f, -1.0f), XMFLOAT4((const float*)&Colors::Red) },
+		{ XMFLOAT3(+1.0f, -1.0f, -1.0f), XMFLOAT4((const float*)&Colors::Green) },
+		{ XMFLOAT3(-1.0f, -1.0f, +1.0f), XMFLOAT4((const float*)&Colors::Blue) },
+		{ XMFLOAT3(-1.0f, +1.0f, +1.0f), XMFLOAT4((const float*)&Colors::Yellow) },
+		{ XMFLOAT3(+1.0f, +1.0f, +1.0f), XMFLOAT4((const float*)&Colors::Cyan) },
+		{ XMFLOAT3(+1.0f, -1.0f, +1.0f), XMFLOAT4((const float*)&Colors::Magenta) }
 	};
 
 	D3D11_BUFFER_DESC vbd;
@@ -210,21 +210,24 @@ void BoxApp::BuildFX()
 	shaderFlags |= D3D10_SHADER_SKIP_OPTIMIZATION;
 #endif
 
-	ID3D10Blob* compiledShader = 0;
-	ID3D10Blob* compilationMsgs = 0;
-	HRESULT hr = D3DX11CompileFromFile(TEXT("FX/color.fx"), 0, 0, 0,
-		"fx_5_0", shaderFlags,
-		0, 0, &compiledShader, &compilationMsgs, 0);
+	ID3DBlob* compiledShader = 0;
+	ID3DBlob* compilationMsgs = 0;
+	//HRESULT hr = D3DX11CompileFromFile(TEXT("FX/color.fx"), 0, 0, 0,
+	//	"fx_5_0", shaderFlags,
+	//	0, 0, &compiledShader, &compilationMsgs, 0);
+	HRESULT hr = D3DCompileFromFile(TEXT("FX/color.fx"),
+		0, 0,
+		"VS", "fx_5_0", 0, 0, &compiledShader, &compilationMsgs);
 
 	if (compilationMsgs != 0)
 	{
-		MessageBox(0, (TCHAR*)compilationMsgs->GetBufferPointer(), 0, 0);
+		MessageBoxA(0, (LPCSTR)compilationMsgs->GetBufferPointer(), 0, 0);
 		ReleaseCOM(compilationMsgs);
 	}
 
 	if (FAILED(hr))
 	{
-		DXTrace(__FILE__, (DWORD)__LINE__, hr, TEXT("D3DX11CompileFromFile"), true);
+		DXTrace(__FILEW__, (DWORD)__LINE__, hr, TEXT("D3DX11CompileFromFile"), true);
 	}
 
 	HR(D3DX11CreateEffectFromMemory(

@@ -9,47 +9,14 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Common">
-      <UniqueIdentifier>{66b671a2-82f1-4699-ad03-bdd28bebe2c5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FX">
       <UniqueIdentifier>{90b2f67a-c895-4f30-b95f-961f84b2d6e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{7bc54bb9-3dd3-42e8-a809-a5f2477692e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Common\Camera.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\d3dUtil.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\d3dx11effect.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\GameTimer.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\GeometryGenerator.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\LightHelper.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\MathHelper.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\TextureMgr.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Waves.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\xnacollision.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\d3dApp.h">
-      <Filter>Common</Filter>
-    </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -61,6 +28,42 @@
     </ClInclude>
     <ClInclude Include="BoxApp.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DDSTextureLoader.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\dxerr.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Camera.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\d3dApp.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\d3dUtil.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\MathHelper.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\TextureMgr.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Waves.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\GameTimer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\GeometryGenerator.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\LightHelper.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\d3dx11effect.h">
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,10 +80,28 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BoxApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\DDSTextureLoader.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\dxerr.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
     <ClCompile Include="Common\Camera.cpp">
       <Filter>Common</Filter>
     </ClCompile>
+    <ClCompile Include="Common\d3dApp.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
     <ClCompile Include="Common\d3dUtil.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\TextureMgr.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Waves.cpp">
       <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="Common\GameTimer.cpp">
@@ -94,24 +115,6 @@
     </ClCompile>
     <ClCompile Include="Common\MathHelper.cpp">
       <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\TextureMgr.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\Waves.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\xnacollision.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\d3dApp.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="GraphicsEngine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BoxApp.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

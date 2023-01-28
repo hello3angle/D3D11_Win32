@@ -6,7 +6,6 @@
 #include <WindowsX.h>
 #include <sstream>
 
-
 namespace
 {
 	// This is just used to forward Windows messages from a global window
@@ -455,111 +454,7 @@ bool D3DApp::InitDirect3D()
 	HR(dxgiAdapter->GetParent(__uuidof(IDXGIFactory), (void**)&dxgiFactory));
 
 	HR(dxgiFactory->CreateSwapChain(md3dDevice, &sd, &mSwapChain));
-
-	//// 1)
-	//dxgiFactory->MakeWindowAssociation(mhMainWnd, DXGI_MWA_NO_WINDOW_CHANGES);
-	//
-	//// 2)
-	//HRESULT result;
-	//dxgiAdapter = nullptr;
-	//std::vector<IDXGIAdapter*> adapters;
-	//UINT numAdapter = 0;
-	//while (dxgiFactory->EnumAdapters(numAdapter, &dxgiAdapter) != DXGI_ERROR_NOT_FOUND)
-	//{
-	//	adapters.push_back(dxgiAdapter);
-	//	numAdapter++;
-	//}
-	//std::wstringstream ws;
-	//ws << numAdapter << std::endl;
-	//std::wstring s1 = TEXT("No. of Adapters: ");
-	//std::wstring s2 = ws.str();
-	////MessageBox(nullptr, (s1 + s2).c_str(), TEXT("Practice 2"), MB_OK);
-	//OutputDebugString((TEXT("Practice 2: ") + s1 + s2).c_str());
-	//
-	//// 3)
-	//LARGE_INTEGER isCompatible;
-	//for (auto it = adapters.begin(); it != adapters.end(); ++it)
-	//{
-	//	if ((*it)->CheckInterfaceSupport(__uuidof(IDXGIDevice), &isCompatible) != DXGI_ERROR_UNSUPPORTED)
-	//	{
-	//		//MessageBox(nullptr, TEXT("D3D11 Supported"), TEXT("Practice 3"), MB_OK);
-	//		OutputDebugString(TEXT("Practice 3: D3D11 Supported\n"));
-	//	}
-	//}
-	//
-	//// 4)
-	//IDXGIOutput* dxgiOutput = nullptr;
-	//std::vector<IDXGIOutput*> outputs;
-	//UINT numMonitor = 0;
-	//for (auto it = adapters.begin(); it != adapters.end(); ++it)
-	//{
-	//	while((*it)->EnumOutputs(numMonitor, &dxgiOutput) != DXGI_ERROR_NOT_FOUND)
-	//	{
-	//		outputs.push_back(dxgiOutput);
-	//		numMonitor++;
-	//	}
-	//}
-	//ws.str(std::wstring());
-	//ws << numMonitor << std::endl;
-	//s1 = TEXT("No. of Moniters: ");
-	//s2 = ws.str();
-	////MessageBox(nullptr, (s1 + s2).c_str(), TEXT("Practice 4"), MB_OK);
-	//OutputDebugString((TEXT("Practice 4: ") + s1 + s2).c_str());
-
-	//// 5)
-	//
-	//for (auto it = outputs.begin(); it != outputs.end(); ++it)
-	//{
-	//	DXGI_MODE_DESC* displayModes = nullptr;
-	//	int size = sizeof(DXGI_MODE_DESC);
-	//	UINT numMode = 0;
-	//	result = (*it)->GetDisplayModeList(DXGI_FORMAT_R8G8B8A8_UNORM, DXGI_ENUM_MODES_INTERLACED, &numMode, nullptr);
-	//	if (!FAILED(result))
-	//	{
-	//		displayModes = new DXGI_MODE_DESC[numMode];
-	//		(*it)->GetDisplayModeList(DXGI_FORMAT_R8G8B8A8_UNORM, DXGI_ENUM_MODES_INTERLACED, &numMode, displayModes);
-	//	}
-	//	
-	//	for (int i = 0; i < numMode; i++)
-	//	{
-	//		ws.str(std::wstring());
-	//		ws << "Width = " << displayModes[i].Width << " "
-	//			<< "Height = " << displayModes[i].Height << " "
-	//			<< "Refresh = " << displayModes[i].RefreshRate.Numerator
-	//			<< "/" << displayModes[i].RefreshRate.Denominator
-	//			<< std::endl;
-	//		std::wstring s = ws.str();
-	//		OutputDebugString(s.c_str());
-	//	}
-
-	//	delete[] displayModes;
-	//}
-
-	//// 6)
-	//D3D11_VIEWPORT vp;
-	//vp.TopLeftX = 0.0f;
-	//vp.TopLeftY = 0.0f;
-	//vp.Width = static_cast<float>(mClientWidth) / 2;
-	//vp.Height = static_cast<float>(mClientHeight) / 2;
-	//vp.MinDepth = 0.0f;
-	//vp.MaxDepth = 1.0f;
-	//md3dImmediateContext->RSSetViewports(1, &vp);
-
-	//// Release interfaces
-	//for (auto it = adapters.begin(); it != adapters.end(); ++it)
-	//{
-	//	ReleaseCOM((*it));
-	//}
-	//adapters.clear();
-	//std::vector<IDXGIAdapter*>().swap(adapters);
-	//for (auto it = outputs.begin(); it != outputs.end(); ++it)
-	//{
-	//	ReleaseCOM((*it));
-	//}
-	//outputs.clear();
-	//std::vector<IDXGIOutput*>().swap(outputs);
-
-	//ReleaseCOM(dxgiOutput);
+	
 	ReleaseCOM(dxgiDevice);
 	ReleaseCOM(dxgiAdapter);
 	ReleaseCOM(dxgiFactory);

@@ -138,6 +138,7 @@ void Camera::LookAt(FXMVECTOR pos, FXMVECTOR target, FXMVECTOR worldUp)
 	XMStoreFloat3(&mLook, L);
 	XMStoreFloat3(&mRight, R);
 	XMStoreFloat3(&mUp, U);
+	
 }
 
 void Camera::LookAt(const XMFLOAT3& pos, const XMFLOAT3& target, const XMFLOAT3& up)

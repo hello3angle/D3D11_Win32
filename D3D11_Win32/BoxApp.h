@@ -1,6 +1,8 @@
 #pragma once
 
-#include "Common/d3dApp.h"
+#include <d3dApp.h>
+
+using namespace DirectX;
 
 struct Vertex
 {
